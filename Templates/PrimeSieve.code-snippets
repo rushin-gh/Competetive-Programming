@@ -1,0 +1,38 @@
+{
+    "default" : {
+        "prefix" : [
+            "sieve",
+        ],
+        "body" : [
+			"class PrimeSieve {",
+			"    private:",
+			"        int size;",
+			"        vector <bool> IsPrime;",
+			"",
+			"        void Process() {",
+			"            IsPrime[0] = IsPrime[1] = 0;",
+			"",
+			"            for (int i = 2; i * i <= size; i++) {",
+			"                if (IsPrime[i]) {",
+			"                    for (int j = i * i; j <= size; j += i) {",
+			"                         IsPrime[j] = false;",
+			"                    }",
+			"                }",
+			"            }",
+			"        }",
+			"",
+			"    public:",
+			"        PrimeSieve(int size) {",
+			"            this->size = size;",
+			"            IsPrime = vector <bool> (size + 1, 1);",
+			"            Process();",
+			"        }",
+			"",
+			"        bool IsPrimeNum(int &num) {",
+			"            return IsPrime[num];",
+			"        }",
+			"};",
+			"",
+        ]
+    }
+}
