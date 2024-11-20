@@ -55,6 +55,7 @@ template <typename T> void print(T &&t) {cout << t << "\n";}
 template <typename T, typename... Args> void print(T &&t, Args &&... args) {cout << t << " "; print(forward<Args>(args)...);}
 /*---------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
+// LogN
 bool IsPrimeLinear(int n) {
     for (int i = 2; i < n; i++) {
         if (n % i == 0) {
@@ -64,6 +65,7 @@ bool IsPrimeLinear(int n) {
     return true;
 }
 
+// LogN
 bool IsPrimeLinear2(int n) {
     for (int i = 2; i <= n / 2; i++) {
         if (n % i == 0) {
@@ -73,6 +75,7 @@ bool IsPrimeLinear2(int n) {
     return true;
 }
 
+// Sqrt(N)
 bool IsPrimeSqrt(int n) {
     for (int i = 2; i * i <= n; i++) {
         if (n % i == 0) {
@@ -82,6 +85,7 @@ bool IsPrimeSqrt(int n) {
     return true;
 }
 
+// N Log(Log N)
 class PrimeSieve {
     private:
         int size;
